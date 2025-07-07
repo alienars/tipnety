@@ -1,0 +1,11 @@
+body {
+    font-family: Tahoma, 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background: #f8fafc;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  

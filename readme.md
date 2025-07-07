@@ -1,42 +1,86 @@
-# 🛒 Tipnety - E-Commerce Frontend UI
+# پروژه فروشگاه اینترنتی تیپ نتی (نسخه ساده و ماژولار)
 
-A modern, responsive, and clean user interface for the Tipnety online store.  
-This project is built entirely with **HTML**, **Tailwind CSS**, and **Alpine.js**, bundled and optimized using **Vite**.
-
----
-
-## 🚀 Project Overview
-
-Tipnety is a full-featured e-commerce UI designed based on a detailed Figma file, with a focus on performance, accessibility, and mobile-first design.  
-This repository includes only the **frontend code**. Backend integration will be handled separately.
+این پروژه یک نمونه فروشگاه اینترنتی ماژولار است که با هدف توسعه سریع، سادگی و قابلیت تبدیل آسان به ساختارهای پیشرفته (مانند Vite یا فریمورک‌های بک‌اند) پیاده‌سازی شده است.
 
 ---
 
-## 🎨 Key Features
+## ساختار پوشه‌ها و فایل‌ها
 
-- ✅ Fully responsive design (Desktop & Mobile)
-- ✅ Modular structure for pages and components
-- ✅ Home page with 5 unique product slider styles
-- ✅ Category pages with advanced filters and product listings
-- ✅ Product detail pages with image sliders, tabs, user reviews, etc.
-- ✅ Full shopping cart flow + checkout UI
-- ✅ Popups: search, notifications, sharing, size guides, and more
-- ✅ User authentication UI: login, register, OTP code
-- ✅ Blog pages: listing styles, detail pages, and comments
-- ✅ User dashboard: orders, favorites, wallet, profile & more
-- ✅ Minimal JS using Alpine.js for interactivity
+```
+/public
+  index.html
+  about.html
+  header.html
+  footer.html
+  /css
+    app.css
+  /js
+    partials-loader.js
+```
 
----
-
-## 🛠️ Technologies Used
-
-- [Vite](https://vitejs.dev/) – Lightning-fast build tool
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
-- [Alpine.js](https://alpinejs.dev/) – Lightweight JS for interactivity
-- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+- **index.html، about.html و سایر صفحات**: صفحات اصلی پروژه بدون تکرار هدر و فوتر
+- **header.html، footer.html**: هدر و فوتر پروژه به صورت فایل‌های مستقل برای استفاده مجدد
+- **css/app.css**: استایل پایه پروژه
+- **js/partials-loader.js**: اسکریپت برای بارگذاری هدر و فوتر به صورت داینامیک
 
 ---
 
-## 📁 Folder Structure (Work In Progress)
+## نحوه اجرا و تست پروژه
 
-> Note: Final structure will evolve as development progresses
+> **نکته مهم:** به‌دلیل محدودیت مرورگرها (CORS)، برای نمایش صحیح هدر و فوتر باید پروژه را با سرور محلی اجرا کنید. باز کردن فایل‌ها به صورت مستقیم (file://) باعث عدم نمایش صحیح هدر و فوتر خواهد شد.
+
+### اجرای سریع با Python:
+
+1. وارد پوشه public شوید:
+   ```bash
+   cd public
+   ```
+2. اجرای سرور محلی:
+   ```bash
+   python -m http.server 9000
+   ```
+3. سپس در مرورگر آدرس زیر را باز کنید:
+   ```
+   http://localhost:9000
+   ```
+
+### اجرای سریع با Node.js:
+
+1. در صورت نیاز سرویس‌دهنده را نصب کنید:
+   ```bash
+   npm install -g serve
+   ```
+2. اجرای سرور:
+   ```bash
+   serve .
+   ```
+3. پروژه را در مرورگر با آدرس نمایش داده‌شده باز کنید (مثلاً [http://localhost:5000](http://localhost:5000)).
+
+### اجرای سریع با VSCode:
+
+1. افزونه Live Server را نصب کنید.
+2. روی فایل html راست‌کلیک کرده و گزینه **Open with Live Server** را انتخاب کنید.
+
+---
+
+## تکنولوژی‌ها و ابزارهای استفاده‌شده
+
+- **Tailwind CSS** (از طریق CDN)
+- **Alpine.js** (از طریق CDN)
+- **Vanilla JS** (برای لود داینامیک هدر و فوتر)
+
+---
+
+## نکات توسعه و شخصی‌سازی
+
+- برای اضافه کردن صفحه جدید، کافیست یک فایل html جدید ایجاد و divهای با id `header` و `footer` و اسکریپت partials-loader.js را اضافه کنید.
+- برای اضافه‌کردن تعاملات (مانند منوی بازشو و غیره)، تنها کافیست CDN Alpine.js را در head هر صفحه قرار دهید.
+- هدر و فوتر تنها یک بار در کل پروژه تعریف و به‌سادگی در تمام صفحات لود می‌شوند.
+- ساختار پروژه ماژولار و آماده انتقال به محیط‌های حرفه‌ای‌تر (Vite، Blade، و ... ) است.
+
+---
+
+## راه‌های پشتیبانی
+
+در صورت بروز هرگونه سوال یا مشکل، با تیم توسعه یا مدیر پروژه تماس بگیرید.
+
