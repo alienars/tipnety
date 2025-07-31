@@ -8,13 +8,28 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body class="font-sans">
+    <!-- ===== HEADER ===== -->
     <div data-include="/partials/header.html"></div>
 
     <main>
-        <div data-include="/partials/about/page-title.html"></div>
-        <div data-include="/partials/about/team-members.html"></div>
+        <!-- ===== SECTION: ABOUT TITLE ===== -->
+<section class="bg-gray-100 py-12 text-center">
+  <h1 class="text-2xl font-bold">درباره ما</h1>
+</section>
+        <!-- ===== END SECTION: ABOUT TITLE ===== -->
+        <!-- ===== SECTION: TEAM MEMBERS ===== -->
+<section class="container mx-auto px-4 py-12">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="text-center space-y-2" repeat="4">
+      <img src="https://placehold.co/150" alt="member" class="mx-auto rounded-full">
+      <p class="font-semibold">عضو تیم</p>
+    </div>
+  </div>
+</section>
+        <!-- ===== END SECTION: TEAM MEMBERS ===== -->
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <div data-include="/partials/footer.html"></div>
 
     <script type="module" src="/assets/js/main.js"></script>
