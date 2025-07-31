@@ -16,11 +16,11 @@
   │   ├─ js/
   │   └─ fonts/
   ├─ pages/
-  └─ partials/
+  └─ partials/ (فقط header و footer)
 ```
 
 - **index.html** و سایر فایل‌های موجود در `pages/` صفحات اصلی پروژه هستند.
-- فایل‌های موجود در `partials/` برای بخش‌های تکرارشونده مانند هدر و فوتر استفاده می‌شوند.
+- پوشه `partials/` تنها شامل فایل‌های `header.html` و `footer.html` است.
 - همه‌ی استایل‌ها از طریق `assets/css/main.css` بارگذاری می‌شوند.
 
 ---
