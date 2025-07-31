@@ -9,15 +9,15 @@ import ViteRestart from 'vite-plugin-restart';
 const __dirname = resolve();
 
 export default defineConfig({
-  root: '.',
+  root: 'src',
   plugins: [
     // ✅ پلاگین را اینجا فراخوانی کنید
     tailwindcss(),
     ViteRestart({
       restart: [
-        'assets/**/**/*',
-        'pages/**/**/*',
-        'partials/**/**/*',
+        'src/assets/**/**/*',
+        'src/pages/**/**/*',
+        'src/partials/**/**/*',
       ],
     }),
   ],
@@ -28,12 +28,12 @@ export default defineConfig({
   },
 
   build: {
-    outDir: './dist',
+    outDir: '../dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'pages/about.html'),
-        login: resolve(__dirname, 'pages/login.html'),
+        main: resolve(__dirname, 'src/index.html'),
+        about: resolve(__dirname, 'src/pages/about.html'),
+        login: resolve(__dirname, 'src/pages/login.html'),
         // ... بقیه صفحات
       }
     }

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.17",
     "vite": "^7.0.3",
     "vite-plugin-restart": "^1.0.0"
   },
