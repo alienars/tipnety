@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود یا ثبت نام</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/font.css">
+</head>
+<!-- ✅ شناسه صفحه برای اجرای اسکریپت‌های مربوطه -->
+<body class="bg-gray-50" data-page="auth">
+  <div data-include="/partials/components/notifications.html"></div>
+    <!-- ✅ هدر اضافه شد -->
+    <div data-include="/partials/header.html"></div>
+
+    <main>
+      <!-- کامپوننت فرم ورود بدون تغییر باقی می‌ماند -->
+      <div data-include="/partials/auth/login-form.html"></div>
+    </main>
+    
+    <!-- ✅ فوتر اضافه شد -->
+    <div data-include="/partials/footer.html"></div>
+
+    <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

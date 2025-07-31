@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- 
+  استانداردسازی: جهت اصلی صفحه برای محتوای فارسی rtl تنظیم شده است.
+-->
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوار اعلان متحرک</title>
+    
+    
+    <style>
+        /*
+          اعمال فونت سفارشی
+        */
+        
+
+        /*
+          Keyframes برای انیمیشن اسکرول
+          - این انیمیشن با استفاده از transform پیاده‌سازی شده که سخت‌افزاری (hardware-accelerated) است و عملکرد بالایی دارد.
+          - حرکت به میزان 50% عرض کل، یک حلقه بی‌نقص و بدون پرش ایجاد می‌کند.
+        */
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /*
+          اعمال انیمیشن به محتوای متحرک
+          - مدت زمان انیمیشن روی 60 ثانیه تنظیم شده تا حرکتی آرام و نرم داشته باشد.
+        */
+        .animate-scroll {
+            animation: scroll 60s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 pt-10">
+
+    <!--
+      شروع کامپوننت نوار اعلان
+    -->
+    <!-- 
+      تغییر اصلی: کلاس dir-ltr اضافه شد.
+      - این کلاس جهت محتوای داخل این div را به چپ به راست تغییر می‌دهد تا انیمیشن و فاصله‌گذاری (space-x) به درستی عمل کنند.
+      - این روش بهینه است و تأثیری روی عملکرد ندارد.
+    -->
+    <div class="w-full bg-red-600 text-white py-3 overflow-hidden whitespace-nowrap dir-ltr [direction:ltr]">
+        
+        <!--
+          کانتینر محتوای متحرک
+          - این کانتینر شامل دو کپی از محتوا برای ایجاد حلقه بی‌نقص است.
+        -->
+        <div class="flex items-center animate-scroll">
+            
+            <!-- 
+              بلوک محتوای اصلی 
+              - `flex-shrink-0`: جلوگیری از فشرده شدن این بلوک.
+              - `space-x-8`: در حالت ltr، فاصله را به سمت راست آیتم‌ها اضافه می‌کند.
+            -->
+            <div class="flex-shrink-0 flex items-center space-x-8 px-4">
+                <span>تخفیف ویژه</span>
+                <span class="text-red-300">◆</span>
+                <span>UP TO 75% OFF</span>
+                <span class="text-red-300">◆</span>
+                <span>روز پدر مبارک</span>
+                <span class="text-red-300">◆</span>
+                <span>تا %75 تخفیف ویژه</span>
+                <span class="text-red-300">◆</span>
+                <span>لباس، کیف و کفش</span>
+                <span class="text-red-300">◆</span>
+                <span>به مناسبت روز پدر</span>
+                <span class="text-red-300">◆</span>
+                <span>لباس، کیف و کفش</span>
+            </div>
+
+            <!-- 
+              بلوک محتوای تکراری (برای حلقه بی‌نهایت) 
+              - `aria-hidden="true"`: این بلوک را از دسترس صفحه‌خوان‌ها مخفی می‌کند چون تکراری است و خواندن دوباره آن برای کاربر مفید نیست.
+            -->
+            <div class="flex-shrink-0 flex items-center space-x-8 px-4" aria-hidden="true">
+                <span class="text-red-300">◆</span>
+                <span>تخفیف ویژه</span>
+                <span class="text-red-300">◆</span>
+                <span>UP TO 75% OFF</span>
+                <span class="text-red-300">◆</span>
+                <span>روز پدر مبارک</span>
+                <span class="text-red-300">◆</span>
+                <span>تا %75 تخفیف ویژه</span>
+                <span class="text-red-300">◆</span>
+                <span>لباس، کیف و کفش</span>
+                <span class="text-red-300">◆</span>
+                <span>به مناسبت روز پدر</span>
+                <span class="text-red-300">◆</span>
+                <span>لباس، کیف و کفش</span>
+            </div>
+
+        </div>
+    </div>
+    <!-- پایان کامپوننت نوار اعلان -->
+
+</body>
+</html>

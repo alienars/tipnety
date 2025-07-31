@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بخش کارت‌های محصول</title>
+    
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+
+    <!--
+      Container اصلی
+      این کانتینر کل بخش را در بر می‌گیرد و پدینگ و حاشیه‌های لازم را فراهم می‌کند.
+    -->
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <!--
+          شبکه (Grid) برای کارت‌ها
+          - در حالت موبایل (پیش‌فرض): دو ستون (grid-cols-2)
+          - در حالت دسکتاپ (lg): سه ستون (lg:grid-cols-3)
+          - `gap-6`: فاصله بین کارت‌ها را تنظیم می‌کند.
+        -->
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- === شروع کامپوننت کارت محصول ۱ === -->
+            <div class="relative group overflow-hidden rounded-2xl shadow-md aspect-[4/5] lg:aspect-[3/4]">
+                <div class="skl-wrap" style="position:relative;width:100%;height:100%;">
+                    <img src="https://placehold.co/600x800/D2B48C/FFFFFF?text=title" alt="تصویر جایگزین برای عینک" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 skl-img-final" style="opacity:0;transition:opacity 0.3s;" loading="lazy" />
+                    <div class="skl-img" style="position:absolute;inset:0;"></div>
+                </div>
+                
+                <!-- لایه تیره روی تصویر برای خوانایی بهتر متن -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+
+                <!-- محتوای کارت -->
+                <div class="relative h-full flex flex-col justify-end items-center p-6">
+                    <!-- 
+                      دکمه خرید
+                    -->
+                    <a href="#" class="bg-white/90 text-gray-900 font-semibold px-8 py-3 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm">
+                        <span>خرید انواع عینک</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- === پایان کامپوننت کارت محصول ۱ === -->
+
+            <!-- === شروع کامپوننت کارت محصول ۲ === -->
+            <div class="relative group overflow-hidden rounded-2xl shadow-md aspect-[4/5] lg:aspect-[3/4]">
+                <div class="skl-wrap" style="position:relative;width:100%;height:100%;">
+                    <img src="https://placehold.co/600x800/D2B48C/FFFFFF?text=title" alt="تصویر جایگزین برای لباس" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 skl-img-final" style="opacity:0;transition:opacity 0.3s;" loading="lazy" />
+                    <div class="skl-img" style="position:absolute;inset:0;"></div>
+                </div>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+
+                <!-- محتوای کارت -->
+                <div class="relative h-full flex flex-col justify-between items-center p-6">
+                    <!-- 
+                      نشان تخفیف
+                    -->
+                    <div class="w-full flex justify-start">
+                        <span class="bg-red-500 text-white text-sm font-bold px-4 py-1.5 rounded-full">تخفیف %۵</span>
+                    </div>
+
+                    <a href="#" class="bg-white/90 text-gray-900 font-semibold px-8 py-3 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm">
+                        <span>خرید لباس بهاری</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- === پایان کامپوننت کارت محصول ۲ === -->
+
+            <!-- === شروع کامپوننت کارت محصول ۳ === -->
+            <div class="relative group overflow-hidden rounded-2xl shadow-md col-span-2 aspect-[2/1] lg:col-span-1 lg:aspect-[3/4]">
+                <div class="skl-wrap" style="position:relative;width:100%;height:100%;">
+                    <img src="https://placehold.co/600x800/B5A695/FFFFFF?text=title" alt="تصویر جایگزین برای کلاه" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 skl-img-final" style="opacity:0;transition:opacity 0.3s;" loading="lazy" />
+                    <div class="skl-img" style="position:absolute;inset:0;"></div>
+                </div>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+                
+                <!-- محتوای کارت -->
+                <div class="relative h-full flex flex-col justify-between items-center p-6">
+                    <div class="w-full flex justify-start">
+                        <span class="bg-red-500 text-white text-sm font-bold px-4 py-1.5 rounded-full">تخفیف %۲۵</span>
+                    </div>
+
+                    <a href="#" class="bg-white/90 text-gray-900 font-semibold px-8 py-3 rounded-full flex items-center gap-3 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm">
+                        <span>خرید انواع کلاه</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- === پایان کامپوننت کارت محصول ۳ === -->
+
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript code can be added here for dynamic functionality.
+        console.log("Component loaded successfully with placeholder images!");
+    </script>
+
+</body>
+</html>

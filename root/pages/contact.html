@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما - تیپ نتی</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body data-page="contact-us">
+
+    <!-- هدر اصلی سایت -->
+    <div data-include="/partials/header.html"></div>
+
+    <!-- هدر جدید با اطلاعات داینامیک -->
+    <div 
+        data-include="/partials/page-header.html"
+        data-title="ارتباط با مرکز پشتیبانی تیپ نتی"
+        data-description="خدمات مشتریان تیپ نتی آماده هرگونه پاسخگویی در زمینه‌های پیگیری، شکایات، انتقادات، پیشنهادات و درخواست‌های مربوط به سفارش و راهنمایی مورد نیاز مشتریان است."
+        data-active-page="contact"
+    ></div>
+
+    <!-- =================================================================== -->
+    <!-- محتوای اصلی صفحه (بخش جدید و طراحی شده) -->
+    <!-- =================================================================== -->
+    <main class="bg-[#F5F5F5] py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <!-- کانتینر اصلی با دو ستون در دسکتاپ -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+                <!-- ستون سمت چپ (جدید): تب‌ها، اسلایدر و اطلاعات -->
+                <div class="lg:col-span-3 bg-white rounded-2xl p-4 sm:p-6 md:p-8 order-1 lg:order-1">
+                    <div x-data="{ activeTab: 'branches' }">
+                        <!-- دکمه‌های تب (اصلاح شده) -->
+                        <div class="flex items-center border-b border-gray-200">
+                            <button @click="activeTab = 'general'" :class="{ 'text-gray-900 border-yellow-400': activeTab === 'general', 'text-gray-500 border-transparent': activeTab !== 'general' }" class="py-3 px-4 text-sm md:text-base font-semibold border-b-2 transition-colors">اطلاعات کلی</button>
+                            <button @click="activeTab = 'branches'" :class="{ 'text-gray-900 border-yellow-400': activeTab === 'branches', 'text-gray-500 border-transparent': activeTab !== 'branches' }" class="py-3 px-4 text-sm md:text-base font-semibold border-b-2 transition-colors">شعب</button>
+                        </div>
+
+                        <!-- محتوای تب‌ها -->
+                        <div class="pt-6">
+                            <!-- تب ۱: اطلاعات کلی (نقشه) -->
+                            <div x-show="activeTab === 'general'" x-cloak>
+                                <div class="rounded-xl overflow-hidden mb-6">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209499.7059298715!2d51.2339368385686!3d35.70732871320479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3d399%3A0x815132788a689431!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sde!4v1678886543210!5m2!1sen!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+
+                            <!-- تب ۲: شعبه‌ها (اسلایدر) -->
+                            <div x-show="activeTab === 'branches'" x-cloak>
+                                <!-- Swiper Slider -->
+                                <div class="swiper contact-branch-slider relative rounded-xl overflow-hidden mb-6">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="https://placehold.co/800x450/E2E8F0/333?text=Branch+Image+1" class="w-full h-full object-cover" alt="تصویر شعبه"></div>
+                                        <div class="swiper-slide"><img src="https://placehold.co/800x450/CBD5E0/333?text=Branch+Image+2" class="w-full h-full object-cover" alt="تصویر شعبه"></div>
+                                        <div class="swiper-slide"><img src="https://placehold.co/800x450/94A3B8/333?text=Branch+Image+3" class="w-full h-full object-cover" alt="تصویر شعبه"></div>
+                                    </div>
+                                    <!-- دکمه‌های ناوبری اسلایدر -->
+                                    <div class="swiper-button-prev absolute top-1/2 left-3 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer transition-colors"><i-con name="arrow-right-1" class="w-4 h-4 text-gray-700"></i-con></div>
+                                    <div class="swiper-button-next absolute top-1/2 right-3 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer transition-colors"><i-con name="arrow-left-1" class="w-4 h-4 text-gray-700"></i-con></div>
+                                </div>
+                            </div>
+
+                            <!-- بخش اطلاعات مشترک -->
+                            <div>
+                                <div class="flex items-center gap-4 py-3 border-b border-gray-100">
+                                    <i-con name="location-pin" class="w-5 h-5 text-gray-400"></i-con>
+                                    <span class="text-sm text-gray-500">آدرس:</span>
+                                    <p class="mr-auto text-sm font-medium text-gray-800">خوزستان، اهواز، کیان پارس، بین ۵ و ۶ وهابی، مجتمع الماس، واحد ۱۱</p>
+                                </div>
+                                <div class="flex items-center gap-4 py-3 border-b border-gray-100">
+                                    <i-con name="phone" class="w-5 h-5 text-gray-400"></i-con>
+                                    <span class="text-sm text-gray-500">شماره تماس:</span>
+                                    <p dir="ltr" class="mr-auto text-sm font-medium text-gray-800">۰۶۱۳ - ۳۳۶۲۸۶۰</p>
+                                </div>
+                                <div class="flex items-center gap-4 py-3 border-b border-gray-100">
+                                    <i-con name="postal-code" class="w-5 h-5 text-gray-400"></i-con>
+                                    <span class="text-sm text-gray-500">کد پستی:</span>
+                                    <p dir="ltr" class="mr-auto text-sm font-medium text-gray-800">۶۱۶۳۳۶۲۸۶۰</p>
+                                </div>
+                                <div class="flex items-center gap-4 py-3">
+                                    <i-con name="clock" class="w-5 h-5 text-gray-400"></i-con>
+                                    <span class="text-sm text-gray-500">ساعات کاری:</span>
+                                    <p dir="ltr" class="mr-auto text-sm font-medium text-yellow-500">از ساعت ۱۰:۰۰ تا ۲۳:۰۰</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ستون سمت راست (جدید): فرم تماس -->
+                <div class="lg:col-span-2 bg-white rounded-2xl p-4 sm:p-6 md:p-8 order-2 lg:order-2">
+                    <h3 class="text-lg font-bold text-gray-900 mb-6">تماس با تیپ نتی</h3>
+                    <form action="#" class="space-y-5">
+                        <div>
+                            <label for="full-name" class="text-sm font-medium text-gray-700 mb-2 flex items-center">نام و نام خانوادگی <span class="text-red-500 mr-1">*</span></label>
+                            <input type="text" id="full-name" class="w-full bg-gray-100 border-transparent rounded-lg p-3 focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="email-phone" class="text-sm font-medium text-gray-700 mb-2 flex items-center">ایمیل یا شماره تماس <span class="text-red-500 mr-1">*</span></label>
+                            <input type="text" id="email-phone" class="w-full bg-gray-100 border-transparent rounded-lg p-3 focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="message" class="text-sm font-medium text-gray-700 mb-2 flex items-center">متن پیام خود را بنویسید <span class="text-red-500 mr-1">*</span></label>
+                            <textarea id="message" rows="6" class="w-full bg-gray-100 border-transparent rounded-lg p-3 focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-gray-800 text-white font-bold py-3.5 px-6 rounded-lg hover:bg-gray-900 transition-colors">ارسال پیام</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- فوتر اصلی سایت -->
+    <div data-include="/partials/footer.html"></div>
+
+    <!-- اسکریپت اصلی -->
+    <script type="module" src="/assets/js/main.js"></script>
+
+</body>
+</html>
