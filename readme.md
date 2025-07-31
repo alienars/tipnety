@@ -7,7 +7,7 @@
 ## ساختار پوشه‌ها
 
 ```
-/root
+/frontend
   ├─ index.html
   ├─ vite.config.js
   ├─ package.json
@@ -29,7 +29,7 @@
 
 1. نصب وابستگی‌ها:
    ```bash
-   cd root
+   cd frontend
    npm install
    ```
 2. اجرای محیط توسعه:

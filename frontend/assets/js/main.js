@@ -19,6 +19,7 @@ import { initSliders } from "./components/sliders.js";
 import { initCountdowns } from "./components/countdown.js";
 import { notificationStore } from "./components/notifications.js";
 import { loadIcons } from './components/icon-loader.js';
+import { loadPartials } from './utils/partial-loader.js';
 
 // ===================================================================
 // ۱) اتصال گلوبالِ کتابخانه‌ها
@@ -80,41 +81,10 @@ function initializeApp() {
 }
 
 // ===================================================================
-// تابع includeHTML: بارگذاری partialها و اجرای نهایی (نسخه اصلاح شده)
-// ===================================================================
-async function includeHTML() {
-  const elements = document.querySelectorAll("[data-include]");
-  if (elements.length === 0) {
-    return;
-  }
-
-  const modules = import.meta.glob("/partials/**/*.html", { query: "?raw" });
-  await Promise.all(
-    Array.from(elements).map(async (el) => {
-      const path = el.getAttribute("data-include");
-      if (modules[path]) {
-        const m = await modules[path]();
-        el.innerHTML = m.default;
-        // --- راه حل اصلی اینجاست ---
-        // بعد از بارگذاری محتوا، اتریبیوت data-include را حذف می‌کنیم تا حلقه بی‌نهایت ایجاد نشود
-        el.removeAttribute('data-include');
-      } else {
-        console.error("Partial not found:", path);
-      }
-    })
-  );
-
-  // اگر partial های تودرتو (nested) وجود داشت، تابع را دوباره اجرا کن
-  if (document.querySelectorAll("[data-include]").length > 0) {
-    await includeHTML();
-  }
-}
-
-// ===================================================================
 // نقطه‌ی شروع برنامه
 // ===================================================================
 document.addEventListener("DOMContentLoaded", async () => {
-  await includeHTML();
+  await loadPartials();
   initializeApp();
   Alpine.start();
 });
